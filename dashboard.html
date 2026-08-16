@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Player & Host Dashboard — turfz</title>
+  <meta name="description" content="Manage your turf slot bookings, team registrations, e-tickets, and stadium host settings on turfz.">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .dash-tab-pane { display: none; }
+    .dash-tab-pane.active { display: block; animation: fadeInUp 0.4s ease forwards; }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER NAVBAR -->
+  <header class="header scrolled">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-futbol"></i></div>
+        <div class="logo-text">turf<span>z</span></div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">⇄</button>
+        <button class="icon-btn theme-toggle-btn header-theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
+        <div style="display: flex; align-items: center; gap: 0.75rem; background: rgba(255,255,255,0.05); padding: 0.35rem 0.85rem; border-radius: var(--radius-pill); border: 1px solid var(--border-color);">
+          <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); color: #040914; display: flex; align-items: center; justify-content: center; font-weight: bold;">MV</div>
+          <span style="font-size: 0.9rem; font-weight: 540;">Marcus Vance</span>
+        </div>
+        <button class="hamburger-toggle" aria-label="Open Menu"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <aside class="mobile-drawer">
+    <div class="drawer-header">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-futbol"></i></div>
+        <div class="logo-text">turf<span>z</span></div>
+      </a>
+      <button class="drawer-close" aria-label="Close Menu"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <nav class="drawer-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="home2.html" class="nav-link">Home 2</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Blog</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="dashboard.html" class="nav-link active">Dashboard</a>
+      <a href="login.html" class="btn btn-primary" style="margin-top: 1rem;">Logout</a>
+    </nav>
+
+    <div class="drawer-controls">
+      <div class="drawer-controls-row">
+        <span>RTL Direction</span>
+        <button class="icon-btn rtl-toggle-btn">⇄</button>
+      </div>
+      <div class="drawer-controls-row">
+        <span>Theme Mode</span>
+        <button class="icon-btn theme-toggle-btn"><i class="fa-solid fa-sun"></i></button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- DASHBOARD MAIN LAYOUT -->
+  <div class="dashboard-layout container">
+    
+    <!-- Sidebar Controls -->
+    <aside class="dashboard-sidebar glass-card">
+      <div class="dash-nav">
+        <div class="dash-nav-item active" data-tab="overview"><i class="fa-solid fa-chart-pie"></i> Overview & KPIs</div>
+        <div class="dash-nav-item" data-tab="slots"><i class="fa-solid fa-calendar-days"></i> Slot Booking Matrix</div>
+        <div class="dash-nav-item" data-tab="teams"><i class="fa-solid fa-users-viewfinder"></i> Team & Matchmaking</div>
+        <div class="dash-nav-item" data-tab="history"><i class="fa-solid fa-ticket"></i> Booking History (QR)</div>
+        <div class="dash-nav-item" data-tab="host"><i class="fa-solid fa-city"></i> Host Venue Manager</div>
+        <div class="dash-nav-item" data-tab="settings"><i class="fa-solid fa-gear"></i> Settings</div>
+      </div>
+
+      <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+        <a href="login.html" class="dash-nav-item" style="color: var(--danger);"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content Panes -->
+    <main class="dashboard-content">
+      
+      <!-- TAB 1: OVERVIEW -->
+      <section id="tab-overview" class="dash-tab-pane active">
+        <div style="margin-bottom: 2rem;">
+          <h1 style="font-size: 2rem; font-weight: 580;">Welcome Back, Marcus!</h1>
+          <p style="color: var(--text-muted);">Here is your player dashboard activity summary for August 2026.</p>
+        </div>
+
+        <!-- KPI Cards Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-icon"><i class="fa-solid fa-trophy"></i></div>
+            <div>
+              <div style="font-size: 1.75rem; font-weight: 580;">24</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Total Matches Played</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(0, 229, 255, 0.15); color: var(--secondary);"><i class="fa-solid fa-calendar-check"></i></div>
+            <div>
+              <div style="font-size: 1.75rem; font-weight: 580;">2</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Upcoming Slot Locks</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(255, 214, 0, 0.15); color: var(--accent);"><i class="fa-solid fa-coins"></i></div>
+            <div>
+              <div style="font-size: 1.75rem; font-weight: 580;">450</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">turfz Reward Coins</div>
+            </div>
+          </div>
+
+          <div class="kpi-card">
+            <div class="kpi-icon" style="background: rgba(255, 82, 82, 0.15); color: var(--danger);"><i class="fa-solid fa-wallet"></i></div>
+            <div>
+              <div style="font-size: 1.75rem; font-weight: 580;">₹2,400</div>
+              <div style="font-size: 0.85rem; color: var(--text-muted);">Wallet Balance</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upcoming Match Card -->
+        <div class="glass-card" style="margin-bottom: 2rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <h3 style="font-size: 1.25rem;">Next Upcoming Slot</h3>
+            <span class="badge badge-primary"><span class="pulsing-dot"></span> Confirmed</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1.5rem; align-items: center;">
+            <div>
+              <h4 style="font-size: 1.15rem; color: var(--primary);">Strikers Arena 7v7 Pitch</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Sector 4 Central Sports Complex</p>
+            </div>
+            <div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Date & Time</div>
+              <div style="font-weight: 540;">Tonight • 08:00 PM - 09:00 PM</div>
+            </div>
+            <div style="text-align: right;">
+              <button class="btn btn-outline btn-sm view-ticket-btn"><i class="fa-solid fa-qrcode"></i> View QR Ticket</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: SLOT BOOKING MATRIX -->
+      <section id="tab-slots" class="dash-tab-pane">
+        <h2 style="font-size: 1.75rem; font-weight: 540; margin-bottom: 1rem;">Real-Time Hourly Slot Booking Matrix</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Browse venue schedules and lock slots for football, cricket, or badminton.</p>
+
+        <div class="slot-picker-container">
+          <div class="slot-picker-header">
+            <div>
+              <h3 style="font-weight: 540;">Select Arena Ground</h3>
+              <select class="form-input" style="margin-top: 0.5rem; width: 280px;">
+                <option>Strikers Arena 7v7 (₹1,400/hr)</option>
+                <option>PowerPlay Box Cricket (₹1,100/hr)</option>
+                <option>Ace Indoor Badminton (₹800/hr)</option>
+              </select>
+            </div>
+            <div class="badge badge-cyan">Instant Booking Engine</div>
+          </div>
+
+          <div class="slots-grid">
+            <button class="slot-btn disabled">06:00 AM</button>
+            <button class="slot-btn">07:00 AM</button>
+            <button class="slot-btn">08:00 AM</button>
+            <button class="slot-btn disabled">09:00 AM</button>
+            <button class="slot-btn">05:00 PM</button>
+            <button class="slot-btn selected">06:00 PM</button>
+            <button class="slot-btn">07:00 PM</button>
+            <button class="slot-btn">08:00 PM</button>
+            <button class="slot-btn">09:00 PM</button>
+          </div>
+
+          <div style="margin-top: 1.5rem; text-align: right;">
+            <button class="btn btn-primary" onclick="alert('Slot successfully booked! E-ticket generated in history.')">Confirm Booking (₹1,400)</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: TEAM & MATCHMAKING BUILDER -->
+      <section id="tab-teams" class="dash-tab-pane">
+        <h2 style="font-size: 1.75rem; font-weight: 540; margin-bottom: 1rem;">Team & Matchmaker Squad Builder</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Invite teammates, set up cost-splitting, and find opponent teams for friendly matches.</p>
+
+        <div class="glass-card">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h3>Active Squad: Thunderbolts 5v5</h3>
+            <button class="btn btn-secondary btn-sm" id="addPlayerBtn"><i class="fa-solid fa-user-plus"></i> Invite Teammate</button>
+          </div>
+
+          <ul id="squadList">
+            <li class="squad-member-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background: rgba(255,255,255,0.04); border-radius: 8px; margin-bottom: 0.5rem; border: 1px solid var(--border-color);">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--primary); color:#040914; display:flex; align-items:center; justify-content:center; font-weight:bold;">MV</div>
+                <span>Marcus Vance (Captain)</span>
+              </div>
+              <span class="badge badge-primary">Paid ₹280</span>
+            </li>
+            <li class="squad-member-item" style="display: flex; align-items: center; justify-content: space-between; padding: 0.75rem 1rem; background: rgba(255,255,255,0.04); border-radius: 8px; margin-bottom: 0.5rem; border: 1px solid var(--border-color);">
+              <div style="display:flex; align-items:center; gap:0.75rem;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--secondary); color:#040914; display:flex; align-items:center; justify-content:center; font-weight:bold;">RS</div>
+                <span>Rahul Sharma (Midfielder)</span>
+              </div>
+              <span class="badge badge-primary">Paid ₹280</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- TAB 4: BOOKING HISTORY & QR E-TICKET -->
+      <section id="tab-history" class="dash-tab-pane">
+        <h2 style="font-size: 1.75rem; font-weight: 540; margin-bottom: 1rem;">Booking History & E-Tickets</h2>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="glass-card" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div>
+              <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Ticket #TZ-99214</div>
+              <h4>Strikers Arena 7v7 Pitch</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">14 Aug 2026 • 08:00 PM - 09:00 PM</p>
+            </div>
+            <button class="btn btn-outline btn-sm view-ticket-btn"><i class="fa-solid fa-qrcode"></i> Show QR Code</button>
+          </div>
+
+          <div class="glass-card" style="flex-direction: row; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; opacity: 0.7;">
+            <div>
+              <div class="badge badge-cyan" style="margin-bottom: 0.5rem;">Completed</div>
+              <h4>PowerPlay Box Cricket Arena</h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted);">08 Aug 2026 • 07:00 PM - 08:00 PM</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" disabled>Match Ended</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: HOST VENUE MANAGER -->
+      <section id="tab-host" class="dash-tab-pane">
+        <h2 style="font-size: 1.75rem; font-weight: 540; margin-bottom: 1rem;">Turf Host Venue Management</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Manage your sports facility slot rates, peak hour surcharges, and ground maintenance windows.</p>
+
+        <div class="glass-card">
+          <h3 style="margin-bottom: 1.25rem;">Strikers Arena — Rate & Schedule Configuration</h3>
+          
+          <div class="form-group">
+            <label class="form-label">Base Hourly Slot Rate (INR)</label>
+            <input type="number" class="form-input" value="1400">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Weekend Surcharge (%)</label>
+            <input type="number" class="form-input" value="15">
+          </div>
+
+          <button type="button" class="btn btn-primary" onclick="alert('Host settings saved!')">Update Facility Rates</button>
+        </div>
+      </section>
+
+      <!-- TAB 6: SETTINGS -->
+      <section id="tab-settings" class="dash-tab-pane">
+        <h2 style="font-size: 1.75rem; font-weight: 540; margin-bottom: 1rem;">Profile & Account Settings</h2>
+
+        <div class="glass-card">
+          <form data-validate="true">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" class="form-input" value="Marcus Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-input" value="marcus.vance@example.com" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Save Profile</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- QR E-TICKET MODAL PREVIEW -->
+  <div id="ticketModal" style="display: none; position: fixed; inset: 0; background: rgba(4,9,20,0.85); backdrop-filter: blur(8px); z-index: 2000; align-items: center; justify-content: center; padding: 1rem;">
+    <div class="glass-card" style="max-width: 380px; width: 100%; text-align: center; position: relative;">
+      <button class="close-ticket-modal" style="position: absolute; top: 15px; right: 15px; background: none; border: none; color: var(--text-main); font-size: 1.2rem; cursor: pointer;"><i class="fa-solid fa-xmark"></i></button>
+
+      <span class="badge badge-primary" style="margin-bottom: 1rem;">Digital Match Pass</span>
+      <h3 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Strikers Arena 7v7 Pitch</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem;">Slot: Tonight • 08:00 PM - 09:00 PM</p>
+
+      <!-- Simulated QR Image -->
+      <div style="background: #FFFFFF; padding: 1.25rem; border-radius: 12px; display: inline-block; margin-bottom: 1.25rem;">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=TZ-99214-TURFZ-MATCH-LOCK" alt="QR Code Ticket Pass" style="width: 180px; height: 180px;">
+      </div>
+
+      <div style="font-size: 0.85rem; color: var(--text-muted);">Scan this QR at the stadium entry turnstile gate</div>
+    </div>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

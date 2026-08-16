@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — turfz Sports Booking Marketplace</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="auth-page">
+
+  <main class="auth-card" style="max-width: 480px;">
+    <!-- Brand Logo Header -->
+    <a href="index.html" class="logo auth-logo">
+      <div class="logo-icon"><i class="fa-solid fa-futbol"></i></div>
+      <div class="logo-text">turf<span>z</span></div>
+    </a>
+
+    <h2 style="font-size: 1.6rem; font-weight: 580; margin-bottom: 0.4rem;">Create Player Account</h2>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.5rem;">Join 180K+ athletes booking turfs across the city.</p>
+
+    <!-- Register Form -->
+    <form data-validate="true" data-redirect="login.html">
+      <div class="form-group">
+        <label class="form-label" for="regName">Full Name</label>
+        <input type="text" id="regName" class="form-input" placeholder="Marcus Vance" required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="regEmail">Email Address</label>
+        <input type="email" id="regEmail" class="form-input" placeholder="name@example.com" required>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+        <div class="form-group">
+          <label class="form-label" for="regPassword">Password</label>
+          <input type="password" id="regPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" class="form-input" placeholder="••••••••" required>
+        </div>
+      </div>
+
+      <div class="form-group" style="margin-block: 0.5rem 1rem;">
+        <label style="display: flex; align-items: flex-start; gap: 0.5rem; font-size: 0.85rem; color: var(--text-muted); cursor: pointer;">
+          <input type="checkbox" required style="margin-top: 0.2rem; accent-color: var(--primary);">
+          <span>I accept the <a href="#" style="color: var(--primary);">Terms & Conditions</a> and Privacy Policy</span>
+        </label>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%;">Register Account</button>
+    </form>
+
+    <!-- Social OAuth Divider -->
+    <div class="auth-divider">or register with</div>
+
+    <div class="social-auth-btns">
+      <button type="button" class="social-btn">
+        <i class="fa-brands fa-google" style="color: #EA4335;"></i> Continue with Google
+      </button>
+      <button type="button" class="social-btn">
+        <i class="fa-brands fa-apple" style="color: var(--text-main);"></i> Continue with Apple
+      </button>
+    </div>
+
+    <p style="font-size: 0.9rem; color: var(--text-muted);">
+      Already have an account? <a href="login.html" style="color: var(--primary); font-weight: 540;">Login Here</a>
+    </p>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

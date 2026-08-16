@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premier Turf Cup 2026 — Launching Soon | turfz</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  <style>
+    .countdown-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-block: 2.5rem;
+    }
+    .countdown-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.75rem;
+      min-width: 100px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+    .countdown-val {
+      font-family: var(--font-heading);
+      font-size: 2.75rem;
+      font-weight: 580;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .countdown-lbl {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <div class="container navbar">
+      <a href="index.html" class="logo">
+        <div class="logo-icon"><i class="fa-solid fa-trophy"></i></div>
+        <div class="logo-text">turf<span>z</span></div>
+      </a>
+
+      <div class="nav-actions">
+        <button class="icon-btn rtl-toggle-btn" aria-label="Toggle RTL">⇄</button>
+        <button class="icon-btn theme-toggle-btn header-theme-toggle" aria-label="Toggle Theme"><i class="fa-solid fa-sun"></i></button>
+        <a href="index.html" class="btn btn-primary btn-sm">Home</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- COMING SOON CONTENT -->
+  <section class="hero-section" style="text-align: center; justify-content: center; background: radial-gradient(circle at center, rgba(0, 229, 255, 0.12) 0%, rgba(6, 10, 23, 1) 70%);">
+    <div class="container" style="max-width: 760px;">
+      <span class="badge badge-volt" style="margin-bottom: 1.25rem;"><i class="fa-solid fa-fire"></i> Tournament League Registration Launching Soon</span>
+      <h1 class="hero-title" style="margin-inline: auto;">The Ultimate City Turf Championship 2026</h1>
+      <p class="hero-subtext" style="margin-inline: auto;">Prepare your 5v5 football and box cricket squads. Registration opens in:</p>
+
+      <!-- Countdown Timer Box Grid -->
+      <div class="countdown-grid">
+        <div class="countdown-box">
+          <div class="countdown-val" id="cd-days">18</div>
+          <div class="countdown-lbl">Days</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-val" id="cd-hours">09</div>
+          <div class="countdown-lbl">Hours</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-val" id="cd-mins">42</div>
+          <div class="countdown-lbl">Mins</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-val" id="cd-secs">15</div>
+          <div class="countdown-lbl">Secs</div>
+        </div>
+      </div>
+
+      <!-- VIP Early Registration Form -->
+      <div class="glass-card" style="max-width: 520px; margin-inline: auto; text-align: left;">
+        <h3 style="font-size: 1.2rem; text-align: center; margin-bottom: 1rem;">Get VIP Squad Pass Notification</h3>
+        <form data-validate="true">
+          <div class="form-group">
+            <input type="text" class="form-input" placeholder="Team Captain Name" required>
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-input" placeholder="Captain Email Address" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Reserve Priority Squad Slot</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container" style="text-align: center;">
+      <p>&copy; 2026 turfz Sports Platform Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

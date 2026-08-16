@@ -1,0 +1,63 @@
+/* ==========================================================================
+   turfz — RTL Layout Overrides (Step 5)
+   ========================================================================== */
+
+[dir="rtl"], body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] .section-title,
+[dir="rtl"] .section-subtext {
+  text-align: center !important;
+}
+
+/* Mobile Hamburger Drawer Slides from LEFT in RTL */
+[dir="rtl"] .mobile-drawer {
+  right: auto;
+  left: -320px;
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.5);
+  transition: left 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[dir="rtl"] .mobile-drawer.open {
+  left: 0;
+  right: auto;
+}
+
+@media (max-width: 360px) {
+  [dir="rtl"] .mobile-drawer {
+    left: -100%;
+  }
+}
+
+/* RTL Icon Flipping & Badge Adjustments */
+[dir="rtl"] .venue-badge-top {
+  left: auto;
+  right: 15px;
+}
+
+[dir="rtl"] .venue-rating {
+  right: auto;
+  left: 15px;
+}
+
+[dir="rtl"] .floating-badge-box {
+  left: auto;
+  right: -20px;
+}
+
+[dir="rtl"] .dashboard-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .i-flip-rtl {
+  transform: scaleX(-1);
+}

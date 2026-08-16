@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — turfz Sports Booking Marketplace</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body class="auth-page">
+
+  <main class="auth-card">
+    <!-- Brand Logo Header -->
+    <a href="index.html" class="logo auth-logo">
+      <div class="logo-icon"><i class="fa-solid fa-futbol"></i></div>
+      <div class="logo-text">turf<span>z</span></div>
+    </a>
+
+    <h2 style="font-size: 1.6rem; font-weight: 580; margin-bottom: 0.4rem;">Welcome Back Player</h2>
+    <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1.75rem;">Login to manage your turf bookings and team matches.</p>
+
+    <!-- Login Form -->
+    <form data-validate="true" data-redirect="dashboard.html">
+      <div class="form-group">
+        <label class="form-label" for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" class="form-input" placeholder="player@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+          <label class="form-label" for="loginPassword" style="margin-bottom: 0;">Password</label>
+          <a href="#" style="font-size: 0.8rem; color: var(--primary);">Forgot?</a>
+        </div>
+        <input type="password" id="loginPassword" class="form-input" placeholder="••••••••" required>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;">Login</button>
+    </form>
+
+    <!-- Social OAuth Divider -->
+    <div class="auth-divider">or continue with</div>
+
+    <div class="social-auth-btns">
+      <button type="button" class="social-btn">
+        <i class="fa-brands fa-google" style="color: #EA4335;"></i> Continue with Google
+      </button>
+      <button type="button" class="social-btn">
+        <i class="fa-brands fa-apple" style="color: var(--text-main);"></i> Continue with Apple
+      </button>
+    </div>
+
+    <p style="font-size: 0.9rem; color: var(--text-muted);">
+      Don't have a turfz account? <a href="register.html" style="color: var(--primary); font-weight: 540;">Register Now</a>
+    </p>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
