@@ -23,10 +23,18 @@ function initDashboardTabs() {
       navItems.forEach(i => i.classList.remove('active'));
       tabPanes.forEach(p => p.classList.remove('active'));
 
-      item.classList.add('active');
+      // Add active state to all nav items that match this tab (handles both desktop sidebar and mobile drawer)
+      document.querySelectorAll(`.dash-nav-item[data-tab="${targetTab}"]`).forEach(el => el.classList.add('active'));
+      
       const pane = document.getElementById(`tab-${targetTab}`);
       if (pane) {
         pane.classList.add('active');
+      }
+      
+      // Close mobile drawer if item was clicked inside it
+      if (item.closest('.mobile-drawer')) {
+        const closeBtn = document.querySelector('.drawer-close');
+        if (closeBtn) closeBtn.click();
       }
     });
   });
