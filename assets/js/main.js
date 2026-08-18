@@ -58,8 +58,7 @@ function initNavbar() {
    ========================================== */
 function initThemeToggle() {
   const themeBtns = document.querySelectorAll('.theme-toggle-btn');
-  const savedTheme = localStorage.getItem('turfz_theme') || 
-    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const savedTheme = localStorage.getItem('turfz_theme') || 'dark';
 
   setTheme(savedTheme);
 
